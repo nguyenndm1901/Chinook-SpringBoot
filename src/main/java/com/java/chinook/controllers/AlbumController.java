@@ -17,6 +17,6 @@ public class AlbumController {
 
     @GetMapping()
     List<Album> getAllAlbums() {
-        return repository.findAll();
+        return repository.findAllByOrderByAlbumIdAsc();
     }
 }
