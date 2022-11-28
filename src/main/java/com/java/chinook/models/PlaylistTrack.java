@@ -1,35 +1,38 @@
 package com.java.chinook.models;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="PlaylistTrack")
 public class PlaylistTrack {
-    int PlaylistId;
-    int TrackId;
+    @Id
+    int playlistId;
+    @Id
+    int trackId;
 
     public PlaylistTrack() {
     }
 
     public PlaylistTrack(int playlistId, int trackId) {
-        PlaylistId = playlistId;
-        TrackId = trackId;
+        this.playlistId = playlistId;
+        this.trackId = trackId;
     }
 
     public int getPlaylistId() {
-        return PlaylistId;
+        return playlistId;
     }
 
     public void setPlaylistId(int playlistId) {
-        PlaylistId = playlistId;
+        this.playlistId = playlistId;
     }
 
     public int getTrackId() {
-        return TrackId;
+        return trackId;
     }
 
     public void setTrackId(int trackId) {
-        TrackId = trackId;
+        this.trackId = trackId;
     }
 }
