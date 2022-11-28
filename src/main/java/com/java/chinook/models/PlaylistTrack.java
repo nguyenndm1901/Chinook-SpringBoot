@@ -2,11 +2,14 @@ package com.java.chinook.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Entity
 @Table(name="PlaylistTrack")
-public class PlaylistTrack {
+@IdClass(PlaylistTrack.class)
+public class PlaylistTrack implements Serializable {
     @Id
     int playlistId;
     @Id
