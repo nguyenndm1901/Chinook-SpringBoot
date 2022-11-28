@@ -11,7 +11,7 @@ public class Track {
     int trackId;
     String name;
     int albumId;
-    int mediaType;
+    int mediaTypeId;
     int genreId;
     String composer;
     int milliseconds;
@@ -21,11 +21,11 @@ public class Track {
     public Track() {
     }
 
-    public Track(int trackId, String name, int albumId, int mediaType, int genreId, String composer, int milliseconds, int bytes, double unitPrice) {
+    public Track(int trackId, String name, int albumId, int mediaTypeId, int genreId, String composer, int milliseconds, int bytes, double unitPrice) {
         this.trackId = trackId;
         this.name = name;
         this.albumId = albumId;
-        this.mediaType = mediaType;
+        this.mediaTypeId = mediaTypeId;
         this.genreId = genreId;
         this.composer = composer;
         this.milliseconds = milliseconds;
@@ -57,12 +57,12 @@ public class Track {
         this.albumId = albumId;
     }
 
-    public int getMediaType() {
-        return mediaType;
+    public int getMediaTypeId() {
+        return mediaTypeId;
     }
 
-    public void setMediaType(int mediaType) {
-        this.mediaType = mediaType;
+    public void setMediaTypeId(int mediaTypeId) {
+        this.mediaTypeId = mediaTypeId;
     }
 
     public int getGenreId() {
