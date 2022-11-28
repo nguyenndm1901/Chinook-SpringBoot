@@ -11,11 +11,11 @@ public class Album {
     @Id
     int albumId;
     String title;
-    String artistId;
+    int artistId;
 
     public Album() {}
 
-    public Album(int albumId, String title, String artistId) {
+    public Album(int albumId, String title, int artistId) {
         this.albumId = albumId;
         this.title = title;
         this.artistId = artistId;
@@ -37,11 +37,11 @@ public class Album {
         this.title = title;
     }
 
-    public String getArtistId() {
+    public int getArtistId() {
         return artistId;
     }
 
-    public void setArtistId(String artistId) {
+    public void setArtistId(int artistId) {
         this.artistId = artistId;
     }
 }
