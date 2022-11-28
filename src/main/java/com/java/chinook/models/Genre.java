@@ -8,30 +8,30 @@ import javax.persistence.Table;
 @Table(name="Genre")
 public class Genre {
     @Id
-    int GenreId;
-    String Name;
+    int genreId;
+    String name;
 
     public Genre() {
     }
 
     public Genre(int genreId, String name) {
-        GenreId = genreId;
-        Name = name;
+        this.genreId = genreId;
+        this.name = name;
     }
 
     public int getGenreId() {
-        return GenreId;
+        return genreId;
     }
 
     public void setGenreId(int genreId) {
-        GenreId = genreId;
+        this.genreId = genreId;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 }

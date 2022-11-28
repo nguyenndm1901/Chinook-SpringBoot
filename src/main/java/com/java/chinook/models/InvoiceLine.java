@@ -8,60 +8,60 @@ import javax.persistence.Table;
 @Table(name="InvoiceLine")
 public class InvoiceLine {
     @Id
-    int InvoiceLineId;
-    int InvoiceId;
-    int TrackId;
-    double UnitPrice;
-    int Quantity;
+    int invoiceLineId;
+    int invoiceId;
+    int trackId;
+    double unitPrice;
+    int quantity;
 
     public InvoiceLine() {
     }
 
     public InvoiceLine(int invoiceLineId, int invoiceId, int trackId, double unitPrice, int quantity) {
-        InvoiceLineId = invoiceLineId;
-        InvoiceId = invoiceId;
-        TrackId = trackId;
-        UnitPrice = unitPrice;
-        Quantity = quantity;
+        this.invoiceLineId = invoiceLineId;
+        this.invoiceId = invoiceId;
+        this.trackId = trackId;
+        this.unitPrice = unitPrice;
+        this.quantity = quantity;
     }
 
     public int getInvoiceLineId() {
-        return InvoiceLineId;
+        return invoiceLineId;
     }
 
     public void setInvoiceLineId(int invoiceLineId) {
-        InvoiceLineId = invoiceLineId;
+        this.invoiceLineId = invoiceLineId;
     }
 
     public int getInvoiceId() {
-        return InvoiceId;
+        return invoiceId;
     }
 
     public void setInvoiceId(int invoiceId) {
-        InvoiceId = invoiceId;
+        this.invoiceId = invoiceId;
     }
 
     public int getTrackId() {
-        return TrackId;
+        return trackId;
     }
 
     public void setTrackId(int trackId) {
-        TrackId = trackId;
+        this.trackId = trackId;
     }
 
     public double getUnitPrice() {
-        return UnitPrice;
+        return unitPrice;
     }
 
     public void setUnitPrice(double unitPrice) {
-        UnitPrice = unitPrice;
+        this.unitPrice = unitPrice;
     }
 
     public int getQuantity() {
-        return Quantity;
+        return quantity;
     }
 
     public void setQuantity(int quantity) {
-        Quantity = quantity;
+        this.quantity = quantity;
     }
 }

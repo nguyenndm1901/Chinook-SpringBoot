@@ -8,100 +8,100 @@ import javax.persistence.Table;
 @Table(name="Track")
 public class Track {
     @Id
-    int TrackId;
-    String Name;
-    int AlbumId;
-    int MediaType;
-    int GenreId;
-    String Composer;
-    int Milliseconds;
-    int Bytes;
-    double UnitPrice;
+    int trackId;
+    String name;
+    int albumId;
+    int mediaType;
+    int genreId;
+    String composer;
+    int milliseconds;
+    int bytes;
+    double unitPrice;
 
     public Track() {
     }
 
     public Track(int trackId, String name, int albumId, int mediaType, int genreId, String composer, int milliseconds, int bytes, double unitPrice) {
-        TrackId = trackId;
-        Name = name;
-        AlbumId = albumId;
-        MediaType = mediaType;
-        GenreId = genreId;
-        Composer = composer;
-        Milliseconds = milliseconds;
-        Bytes = bytes;
-        UnitPrice = unitPrice;
+        this.trackId = trackId;
+        this.name = name;
+        this.albumId = albumId;
+        this.mediaType = mediaType;
+        this.genreId = genreId;
+        this.composer = composer;
+        this.milliseconds = milliseconds;
+        this.bytes = bytes;
+        this.unitPrice = unitPrice;
     }
 
     public int getTrackId() {
-        return TrackId;
+        return trackId;
     }
 
     public void setTrackId(int trackId) {
-        TrackId = trackId;
+        this.trackId = trackId;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public int getAlbumId() {
-        return AlbumId;
+        return albumId;
     }
 
     public void setAlbumId(int albumId) {
-        AlbumId = albumId;
+        this.albumId = albumId;
     }
 
     public int getMediaType() {
-        return MediaType;
+        return mediaType;
     }
 
     public void setMediaType(int mediaType) {
-        MediaType = mediaType;
+        this.mediaType = mediaType;
     }
 
     public int getGenreId() {
-        return GenreId;
+        return genreId;
     }
 
     public void setGenreId(int genreId) {
-        GenreId = genreId;
+        this.genreId = genreId;
     }
 
     public String getComposer() {
-        return Composer;
+        return composer;
     }
 
     public void setComposer(String composer) {
-        Composer = composer;
+        this.composer = composer;
     }
 
     public int getMilliseconds() {
-        return Milliseconds;
+        return milliseconds;
     }
 
     public void setMilliseconds(int milliseconds) {
-        Milliseconds = milliseconds;
+        this.milliseconds = milliseconds;
     }
 
     public int getBytes() {
-        return Bytes;
+        return bytes;
     }
 
     public void setBytes(int bytes) {
-        Bytes = bytes;
+        this.bytes = bytes;
     }
 
     public double getUnitPrice() {
-        return UnitPrice;
+        return unitPrice;
     }
 
     public void setUnitPrice(double unitPrice) {
-        UnitPrice = unitPrice;
+        this.unitPrice = unitPrice;
     }
 }

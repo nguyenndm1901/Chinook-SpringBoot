@@ -9,40 +9,39 @@ import javax.persistence.Table;
 @Table(name="Album")
 public class Album {
     @Id
-    @Column(name="AlbumId")
-    int AlbumId;
-    String Title;
-    String ArtistId;
+    int albumId;
+    String title;
+    String artistId;
 
     public Album() {}
 
     public Album(int albumId, String title, String artistId) {
-        AlbumId = albumId;
-        Title = title;
-        ArtistId = artistId;
+        this.albumId = albumId;
+        this.title = title;
+        this.artistId = artistId;
     }
 
     public int getAlbumId() {
-        return AlbumId;
+        return albumId;
     }
 
     public void setAlbumId(int albumId) {
-        AlbumId = albumId;
+        this.albumId = albumId;
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title) {
-        Title = title;
+        this.title = title;
     }
 
     public String getArtistId() {
-        return ArtistId;
+        return artistId;
     }
 
     public void setArtistId(String artistId) {
-        ArtistId = artistId;
+        this.artistId = artistId;
     }
 }

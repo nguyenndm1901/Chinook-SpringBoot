@@ -8,30 +8,30 @@ import javax.persistence.Table;
 @Table(name="Playlist")
 public class Playlist {
     @Id
-    int PlaylistId;
-    String Name;
+    int playlistId;
+    String name;
 
     public Playlist() {
     }
 
     public Playlist(int playlistId, String name) {
-        PlaylistId = playlistId;
-        Name = name;
+        this.playlistId = playlistId;
+        this.name = name;
     }
 
     public int getPlaylistId() {
-        return PlaylistId;
+        return playlistId;
     }
 
     public void setPlaylistId(int playlistId) {
-        PlaylistId = playlistId;
+        this.playlistId = playlistId;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 }

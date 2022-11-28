@@ -8,30 +8,30 @@ import javax.persistence.Table;
 @Table(name="Artist")
 public class Artist {
     @Id
-    int ArtistId;
-    String Name;
+    int artistId;
+    String name;
 
     public Artist() {
     }
 
     public Artist(int artistId, String name) {
-        ArtistId = artistId;
-        Name = name;
+        this.artistId = artistId;
+        this.name = name;
     }
 
     public int getArtistId() {
-        return ArtistId;
+        return artistId;
     }
 
     public void setArtistId(int artistId) {
-        ArtistId = artistId;
+        this.artistId = artistId;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 }

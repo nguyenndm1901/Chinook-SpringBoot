@@ -8,30 +8,30 @@ import javax.persistence.Table;
 @Table(name="MediaType")
 public class MediaType {
     @Id
-    int MediaTypeId;
-    String Name;
-
-    public MediaType(int mediaTypeId, String name) {
-        MediaTypeId = mediaTypeId;
-        Name = name;
-    }
+    int mediaTypeId;
+    String name;
 
     public MediaType() {
     }
 
+    public MediaType(int mediaTypeId, String name) {
+        this.mediaTypeId = mediaTypeId;
+        this.name = name;
+    }
+
     public int getMediaTypeId() {
-        return MediaTypeId;
+        return mediaTypeId;
     }
 
     public void setMediaTypeId(int mediaTypeId) {
-        MediaTypeId = mediaTypeId;
+        this.mediaTypeId = mediaTypeId;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 }

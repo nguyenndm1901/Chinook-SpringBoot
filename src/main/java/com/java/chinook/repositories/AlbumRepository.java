@@ -9,5 +9,5 @@ import java.util.Optional;
 public interface AlbumRepository extends JpaRepository<Album, Integer> {
     Optional<Album> findById(int Id);
 
-    List<Album> findAll();
+    List<Album> findAllByOrderByAlbumIdAsc();
 }

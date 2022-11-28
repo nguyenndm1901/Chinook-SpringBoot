@@ -8,140 +8,140 @@ import javax.persistence.Table;
 @Table(name="Customer")
 public class Customer {
     @Id
-    int CustomerId;
-    String FirstName;
-    String LastName;
-    String Company;
-    String Address;
-    String City;
-    String State;
-    String Country;
-    String PostalCode;
-    String Phone;
-    String Fax;
-    String Email;
-    int SupportRepId;
+    int customerId;
+    String firstName;
+    String lastName;
+    String company;
+    String address;
+    String city;
+    String state;
+    String country;
+    String postalCode;
+    String phone;
+    String fax;
+    String email;
+    int supportRepId;
 
     public Customer() {
     }
 
     public Customer(int customerId, String firstName, String lastName, String company, String address, String city, String state, String country, String postalCode, String phone, String fax, String email, int supportRepId) {
-        CustomerId = customerId;
-        FirstName = firstName;
-        LastName = lastName;
-        Company = company;
-        Address = address;
-        City = city;
-        State = state;
-        Country = country;
-        PostalCode = postalCode;
-        Phone = phone;
-        Fax = fax;
-        Email = email;
-        SupportRepId = supportRepId;
+        this.customerId = customerId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.company = company;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        this.postalCode = postalCode;
+        this.phone = phone;
+        this.fax = fax;
+        this.email = email;
+        this.supportRepId = supportRepId;
     }
 
     public int getCustomerId() {
-        return CustomerId;
+        return customerId;
     }
 
     public void setCustomerId(int customerId) {
-        CustomerId = customerId;
+        this.customerId = customerId;
     }
 
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.firstName = firstName;
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getCompany() {
-        return Company;
+        return company;
     }
 
     public void setCompany(String company) {
-        Company = company;
+        this.company = company;
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        this.address = address;
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        this.city = city;
     }
 
     public String getState() {
-        return State;
+        return state;
     }
 
     public void setState(String state) {
-        State = state;
+        this.state = state;
     }
 
     public String getCountry() {
-        return Country;
+        return country;
     }
 
     public void setCountry(String country) {
-        Country = country;
+        this.country = country;
     }
 
     public String getPostalCode() {
-        return PostalCode;
+        return postalCode;
     }
 
     public void setPostalCode(String postalCode) {
-        PostalCode = postalCode;
+        this.postalCode = postalCode;
     }
 
     public String getPhone() {
-        return Phone;
+        return phone;
     }
 
     public void setPhone(String phone) {
-        Phone = phone;
+        this.phone = phone;
     }
 
     public String getFax() {
-        return Fax;
+        return fax;
     }
 
     public void setFax(String fax) {
-        Fax = fax;
+        this.fax = fax;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public int getSupportRepId() {
-        return SupportRepId;
+        return supportRepId;
     }
 
     public void setSupportRepId(int supportRepId) {
-        SupportRepId = supportRepId;
+        this.supportRepId = supportRepId;
     }
 }

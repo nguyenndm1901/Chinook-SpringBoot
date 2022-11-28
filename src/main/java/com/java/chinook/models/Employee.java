@@ -9,160 +9,160 @@ import java.util.Date;
 @Table(name="Employee")
 public class Employee {
     @Id
-    int EmployeeId;
-    String LastName;
-    String FirstName;
-    String Title;
-    int ReportsTo;
-    Date BirthDate;
-    Date HireDate;
-    String Address;
-    String City;
-    String State;
-    String Country;
-    String PostalCode;
-    String Phone;
-    String Fax;
-    String Email;
+    int employeeId;
+    String lastName;
+    String firstName;
+    String title;
+    int reportsTo;
+    Date birthDate;
+    Date hireDate;
+    String address;
+    String city;
+    String state;
+    String country;
+    String postalCode;
+    String phone;
+    String fax;
+    String email;
 
     public Employee() {
     }
 
     public Employee(int employeeId, String lastName, String firstName, String title, int reportsTo, Date birthDate, Date hireDate, String address, String city, String state, String country, String postalCode, String phone, String fax, String email) {
-        EmployeeId = employeeId;
-        LastName = lastName;
-        FirstName = firstName;
-        Title = title;
-        ReportsTo = reportsTo;
-        BirthDate = birthDate;
-        HireDate = hireDate;
-        Address = address;
-        City = city;
-        State = state;
-        Country = country;
-        PostalCode = postalCode;
-        Phone = phone;
-        Fax = fax;
-        Email = email;
+        this.employeeId = employeeId;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.title = title;
+        this.reportsTo = reportsTo;
+        this.birthDate = birthDate;
+        this.hireDate = hireDate;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        this.postalCode = postalCode;
+        this.phone = phone;
+        this.fax = fax;
+        this.email = email;
     }
 
     public int getEmployeeId() {
-        return EmployeeId;
+        return employeeId;
     }
 
     public void setEmployeeId(int employeeId) {
-        EmployeeId = employeeId;
+        this.employeeId = employeeId;
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.firstName = firstName;
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title) {
-        Title = title;
+        this.title = title;
     }
 
     public int getReportsTo() {
-        return ReportsTo;
+        return reportsTo;
     }
 
     public void setReportsTo(int reportsTo) {
-        ReportsTo = reportsTo;
+        this.reportsTo = reportsTo;
     }
 
     public Date getBirthDate() {
-        return BirthDate;
+        return birthDate;
     }
 
     public void setBirthDate(Date birthDate) {
-        BirthDate = birthDate;
+        this.birthDate = birthDate;
     }
 
     public Date getHireDate() {
-        return HireDate;
+        return hireDate;
     }
 
     public void setHireDate(Date hireDate) {
-        HireDate = hireDate;
+        this.hireDate = hireDate;
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        this.address = address;
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        this.city = city;
     }
 
     public String getState() {
-        return State;
+        return state;
     }
 
     public void setState(String state) {
-        State = state;
+        this.state = state;
     }
 
     public String getCountry() {
-        return Country;
+        return country;
     }
 
     public void setCountry(String country) {
-        Country = country;
+        this.country = country;
     }
 
     public String getPostalCode() {
-        return PostalCode;
+        return postalCode;
     }
 
     public void setPostalCode(String postalCode) {
-        PostalCode = postalCode;
+        this.postalCode = postalCode;
     }
 
     public String getPhone() {
-        return Phone;
+        return phone;
     }
 
     public void setPhone(String phone) {
-        Phone = phone;
+        this.phone = phone;
     }
 
     public String getFax() {
-        return Fax;
+        return fax;
     }
 
     public void setFax(String fax) {
-        Fax = fax;
+        this.fax = fax;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 }
