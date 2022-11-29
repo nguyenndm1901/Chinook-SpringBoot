@@ -18,7 +18,7 @@ public class AlbumService extends ServiceBase {
     @GetMapping("/albums")
     public ResponseEntity getAllAlbums() {
         try {
-            List<Album> albums = repository.findAllByOrderByAlbumIdAsc();
+            List<Album> albums = albumRepository.findAllByOrderByAlbumIdAsc();
             List<HashMap<String, Object>> items = new ArrayList<>();
             if (null != albums && albums.size() > 0) {
                 for (Album album : albums) {
@@ -31,49 +31,50 @@ public class AlbumService extends ServiceBase {
             }
             return getSuccessResponse("", items);
         } catch (Exception e) {
-            e.printStackTrace();
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>("Failed", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @GetMapping("/by-album-id/{albumId}")
-    public ResponseEntity getAlbumById(@PathVariable Integer albumId) {
+    @GetMapping("/by-album-id/{id}")
+    public ResponseEntity getAlbumById(@PathVariable String id) {
         try {
-            if (albumId == null) {
+            if (id.isBlank()) {
                 return getErrorResponse("albumId cannot be empty");
             }
-            Optional<Album> album = repository.findByAlbumId(albumId);
-            if (album.isPresent()) {
-                List<HashMap<String, Object>> items = new ArrayList<>();
-                HashMap<String, Object> item = new HashMap<>();
-                item.put("albumId", album.get().getAlbumId());
-                item.put("title", album.get().getTitle());
-                item.put("artistId", album.get().getArtistId());
-                items.add(item);
-                return getSuccessResponse("", items);
-            } else getNotFoundResponse();
+            if (!isInteger(id)) return getErrorResponse("albumId must be Integer");
+            else {
+                int albumId = Integer.parseInt(id);
+                Optional<Album> album = albumRepository.findByAlbumId(albumId);
+                if (album.isPresent()) {
+                    List<HashMap<String, Object>> items = new ArrayList<>();
+                    HashMap<String, Object> item = new HashMap<>();
+                    item.put("albumId", album.get().getAlbumId());
+                    item.put("title", album.get().getTitle());
+                    item.put("artistId", album.get().getArtistId());
+                    items.add(item);
+                    return getSuccessResponse("", items);
+                } else return getNotFoundResponse();
+            }
         } catch (Exception e) {
-            e.printStackTrace();
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>("Failed", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @GetMapping("/by-artist-id/{artistId}")
-    public ResponseEntity getAlbumByArtistId(@PathVariable Integer artistId) {
+    @GetMapping("/by-artist-id/{id}")
+    public ResponseEntity getAlbumByArtistId(@PathVariable String id) {
         try {
-            if (artistId == null) {
-                return getErrorResponse("artistId cannot be empty");
-            }
-            List<Album> foundAlbums = repository.findAll();
+            if (id.isBlank()) return getErrorResponse("artistId cannot be empty");
+            if (!isInteger(id)) return getErrorResponse("artistId must be Integer");
+            int artistId = Integer.parseInt(id);
+            List<Album> foundAlbums = albumRepository.findAll();
             List<Album> albums = new ArrayList<>();
             List<HashMap<String, Object>> items = new ArrayList<>();
             if (foundAlbums.size() > 0) {
                 for (Album album : foundAlbums) {
-                    if (album.getArtistId() == artistId) {
+                    if (album.getArtistId() == artistId)
                         albums.add(album);
-                    }
                 }
-            } else getNotFoundResponse();
+            } else return getNotFoundResponse();
             if (albums.size() > 0) {
                 for (Album album : albums) {
                     HashMap<String, Object> item = new HashMap<>();
@@ -85,9 +86,8 @@ public class AlbumService extends ServiceBase {
             }
             return getSuccessResponse("", items);
         } catch (Exception e) {
-            e.printStackTrace();
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>("Failed", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @GetMapping("/by-title/{title}")
@@ -96,7 +96,7 @@ public class AlbumService extends ServiceBase {
             if (title.isBlank()) {
                 return getErrorResponse("Title cannot be empty");
             }
-            List<Album> foundAlbums = repository.findAll();
+            List<Album> foundAlbums = albumRepository.findAll();
             List<Album> albums = new ArrayList<>();
             List<HashMap<String, Object>> items = new ArrayList<>();
             if (foundAlbums.size() > 0) {
@@ -105,7 +105,7 @@ public class AlbumService extends ServiceBase {
                         albums.add(album);
                     }
                 }
-            } else getNotFoundResponse();
+            } else return getNotFoundResponse();
             if (albums.size() > 0) {
                 for (Album album : albums) {
                     HashMap<String, Object> item = new HashMap<>();
@@ -117,8 +117,7 @@ public class AlbumService extends ServiceBase {
             }
             return getSuccessResponse("", items);
         } catch (Exception e) {
-            e.printStackTrace();
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>("Failed", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
