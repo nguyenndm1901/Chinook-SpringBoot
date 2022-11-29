@@ -1,6 +1,5 @@
 package com.java.chinook.services;
 
-import com.java.chinook.models.Album;
 import com.java.chinook.models.Artist;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
