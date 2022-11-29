@@ -2,11 +2,11 @@ package com.java.chinook.services;
 
 import com.java.chinook.interfaces.AlbumRepository;
 import com.java.chinook.interfaces.ArtistRepository;
+import com.java.chinook.interfaces.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import javax.ws.rs.core.Response;
 import java.util.HashMap;
 
 public abstract class ServiceBase {
@@ -14,6 +14,8 @@ public abstract class ServiceBase {
     AlbumRepository albumRepository;
     @Autowired
     ArtistRepository artistRepository;
+    @Autowired
+    CustomerRepository customerRepository;
 
     protected static ResponseEntity<Object> getSuccessResponse(String message, Object data) {
         HashMap<String, Object> map = new HashMap<>();
