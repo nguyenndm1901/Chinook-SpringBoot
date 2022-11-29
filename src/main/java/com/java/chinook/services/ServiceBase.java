@@ -1,6 +1,7 @@
 package com.java.chinook.services;
 
 import com.java.chinook.interfaces.AlbumRepository;
+import com.java.chinook.interfaces.ArtistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +11,10 @@ import java.util.HashMap;
 
 public abstract class ServiceBase {
     @Autowired
-    AlbumRepository repository;
+    AlbumRepository albumRepository;
+    @Autowired
+    ArtistRepository artistRepository;
+
     protected static ResponseEntity<Object> getSuccessResponse(String message, Object data) {
         HashMap<String, Object> map = new HashMap<>();
         try {
@@ -68,8 +72,18 @@ public abstract class ServiceBase {
             map.put("message", "No result found");
             return new ResponseEntity<>(map, HttpStatus.NOT_FOUND);
         } catch (Exception e) {
-            e.printStackTrace();
+            map.put("status", 0);
+            map.put("message", e.getMessage());
+            return new ResponseEntity<>(map, HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>("Failed", HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    protected static boolean isInteger(String number) {
+        try {
+            Integer.parseInt(number);
+        } catch(NumberFormatException | NullPointerException e) {
+            return false;
+        }
+        return true;
     }
 }
